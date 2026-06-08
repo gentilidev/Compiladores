@@ -1,0 +1,12 @@
+// Demonstra if-else, booleanos e operadores relacionais.
+int x;
+x = 10;
+
+bool maior;
+maior = x > 5;
+
+if (maior) {
+    print x;
+} else {
+    print 0;
+}

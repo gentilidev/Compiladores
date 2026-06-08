@@ -1,0 +1,11 @@
+// Programa cheio de erros semanticos, para mostrar a deteccao da Fase C.
+int x;
+x = true;     // erro de tipo: int recebendo bool
+
+print y;      // erro: variavel 'y' nao declarada
+
+int x;        // erro: 'x' ja declarada
+
+if (x + 1) {  // erro: condicao do if nao e booleana
+    print x;
+}

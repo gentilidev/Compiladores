@@ -1,0 +1,16 @@
+// Calcula o fatorial de um numero lido da entrada.
+int n;
+read n;
+
+int fat;
+fat = 1;
+
+int i;
+i = 1;
+while (i < n + 1) {
+    fat = fat * i;
+    i = i + 1;
+}
+
+print "fatorial:";
+print fat;
