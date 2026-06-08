@@ -3,8 +3,8 @@ from dataclasses import dataclass
 
 @dataclass
 class Token:
-    tipo: str
-    lexema: str
+    type: str
+    lexeme: str
     literal: object
-    linha: int
-    coluna: int
+    line: int
+    column: int
