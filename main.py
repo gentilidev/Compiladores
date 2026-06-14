@@ -68,7 +68,7 @@ def main():
     scanner = Scanner(source)
     tokens = scanner.scan_tokens()
     if scanner.had_error:
-        return
+        sys.exit(1)
     if debug:
         print("--- TOKENS ---")
         for tok in tokens:
@@ -78,7 +78,7 @@ def main():
     try:
         tree = parser.parse()
     except ParseError:
-        return
+        sys.exit(1)
     if debug:
         print("\n--- AST ---")
         for stmt in tree:
@@ -86,7 +86,7 @@ def main():
 
     analyzer = SemanticAnalyzer()
     if not analyzer.analyze(tree):
-        return
+        sys.exit(1)
     if debug:
         print("\n--- TABELA DE SIMBOLOS ---")
         for nome, tipo, escopo in analyzer.symbols.all_symbols:
@@ -106,7 +106,11 @@ def main():
         print(format_bytecode(bytecode))
         print("\n--- EXECUCAO ---")
 
-    VM(bytecode).run()
+    try:
+        VM(bytecode).run()
+    except RuntimeError as erro:
+        print(f"Erro de execucao: {erro}", file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":
