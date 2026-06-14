@@ -1,9 +1,10 @@
 # Compilador
 
-Trabalho da disciplina de Linguagens Formais e Autômatos. É um compilador feito em
-Python (sem usar bibliotecas prontas de compilador). Ele passa pelas fases de análise
-léxica, sintática, semântica, gera código intermediário (TAC) e código final
-(bytecode), e no fim executa o programa numa máquina virtual de pilha.
+Trabalho da disciplina de **Compiladores** (2026/1) — turma ESW-NOT-PIT-7S-T2 (53334),
+profa. Sheila Tirony. É um compilador feito em Python (sem usar bibliotecas prontas de
+compilador). Ele passa pelas fases de análise léxica, sintática, semântica, gera código
+intermediário (TAC) e código final (bytecode), e no fim executa o programa numa máquina
+virtual de pilha.
 
 ## Como rodar
 
